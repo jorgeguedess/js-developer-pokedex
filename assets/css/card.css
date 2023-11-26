@@ -1,0 +1,245 @@
+#card {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  color: #28323c;
+  z-index: 99;
+
+  margin: 0;
+  padding: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+#card.active {
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+  visibility: visible;
+  overflow: initial;
+}
+
+#card .pokemon {
+  margin: 0;
+  border-radius: 0;
+}
+
+#card .menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+#card .menu i {
+  cursor: pointer;
+}
+
+#card .menu .arrow:hover {
+  color: #28323c;
+  transition: 0.3s;
+}
+
+#card .menu .heart:hover {
+  color: #bd1717;
+  transition: 0.3s;
+}
+
+#card .menu i {
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+#card .name {
+  font-size: clamp(1rem, 10vw, 2rem);
+}
+
+#card .number {
+  color: #fff;
+  opacity: initial;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+#card .type {
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 0.375rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#card .detail {
+  flex-direction: column;
+  align-items: baseline;
+}
+
+#card .detail img {
+  height: 250px;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+#card .subtitle {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+#card .desc {
+  color: #919191;
+  font-size: 0.875rem;
+  word-wrap: break-word;
+}
+
+#card .maintenance {
+  color: #919191;
+  text-align: center;
+  margin: 1rem;
+}
+
+#attributes {
+  flex: 1;
+
+  background: #fff;
+  padding: 3rem 2rem;
+  margin-top: -3rem;
+}
+
+#attributes .menu-attributes {
+  list-style: none;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem 0.5rem;
+  margin-bottom: 2rem;
+}
+
+#attributes .menu-attributes li {
+  color: #c3c6c8;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#attributes .menu-attributes li::after {
+  display: block;
+  content: "";
+  width: 0%;
+  margin-top: 1.25rem;
+  height: 4px;
+  border-radius: 2px;
+  background: transparent;
+  transition: 0.3s;
+}
+
+#attributes .menu-attributes li:hover,
+#attributes .menu-attributes li.active,
+#attributes .menu-attributes li:focus-visible {
+  color: #28323c;
+}
+
+#attributes .menu-attributes li:hover::after,
+#attributes .menu-attributes li.active::after {
+  width: 100%;
+  background: #8f99e4;
+}
+
+#about .info {
+  display: flex;
+  gap: 1rem;
+}
+
+#about .info:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+#about .info p {
+  width: 100%;
+  max-width: 100px;
+  color: #919191;
+}
+
+#about .info span {
+  width: 100%;
+  max-width: 160px;
+}
+
+#about .info .gender-container {
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+#about .info .gender-container i {
+  margin-right: 0.5rem;
+}
+
+@media screen and (min-width: 380px) {
+  #about .info p,
+  #about .info span {
+    max-width: initial;
+  }
+}
+
+#base {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#base .status {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#base .status:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 380px) {
+  #base .status {
+    flex-direction: row;
+    gap: 2rem 4rem;
+  }
+}
+
+#base .status p {
+  width: 60px;
+  color: #919191;
+}
+
+#base .status .power {
+  flex: 1;
+  font-size: 0.875rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+#base .status .power .bar {
+  flex: 1;
+  height: 5px;
+
+  background: #f9faf9;
+  border-radius: 2px;
+}
+
+#base .status .power .bar::after {
+  display: block;
+  content: "";
+  background: #7ad09c;
+  width: inherit;
+  height: 5px;
+}
+
+#base .status.essential .power .bar::after {
+  background: #fa6363;
+}
